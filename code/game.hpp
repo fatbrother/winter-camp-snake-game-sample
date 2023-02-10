@@ -125,8 +125,26 @@ void Game::render()
 
 void Game::handlePlayerInput(sf::Keyboard::Key key)
 {
-    // call snake.setDirection() with different direction
-    // UP, DOWN, LEFT, RIGHT defined in context.hpp
+    switch (key)
+    {
+    case sf::Keyboard::Up:
+        snake.setDirection(UP);
+        break;
+    case sf::Keyboard::Down:
+        snake.setDirection(DOWN);
+        break;
+    case sf::Keyboard::Left:
+        snake.setDirection(LEFT);
+        break;
+    case sf::Keyboard::Right:
+        snake.setDirection(RIGHT);
+        break;
+    case sf::Keyboard::R:
+        reset();
+        break;
+    default:
+        break;
+    }
 }
 
 void Game::reset()
